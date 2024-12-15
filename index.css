@@ -1,0 +1,35 @@
+/* Applique un fond vert à toute la page */
+body {
+    background-color: green;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: white; /* Texte en blanc pour contraster avec le fond vert */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ajuste la hauteur pour remplir la fenêtre */
+}
+
+/* Style des titres */
+h1, h2 {
+    font-size: 2rem;
+    margin: 10px;
+}
+
+/* Style des paragraphes */
+p {
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+/* Style du message caché */
+#message {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
+    padding: 10px;
+    border-radius: 5px;
+}

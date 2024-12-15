@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code secret</title>
+    <link rel="stylesheet" href="mona.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entrez la combinaison de touches pour découvrir le message caché</h1>
+    <p>Appuyez sur "M", puis "flèche bas", puis "P".</p>
+
+    <div id="message">Bien joué !</div>
+
+    <script>
+        // Liste des touches à appuyer dans l'ordre
+        const sequence = ['m', 'ArrowDown', 'p'];
+        let currentStep = 0;
+
+        // Fonction qui vérifie si la combinaison de touches est correcte
+        document.addEventListener('keydown', function(event) {
+            // Vérifier si la touche appuyée correspond à la prochaine étape de la séquence
+            if (event.key === sequence[currentStep]) {
+                currentStep++;
+                
+                // Si la séquence est complète, afficher le message
+                if (currentStep === sequence.length) {
+                    document.getElementById('message').style.display = 'block';
+                    currentStep = 0; // Réinitialiser la séquence pour pouvoir recommencer
+                }
+            } else {
+                // Si une touche incorrecte est appuyée, réinitialiser la séquence
+                currentStep = 0;
+            }
+        });
+    </script>
+</body>
+</html>
